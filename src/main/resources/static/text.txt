@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/post_odontologo.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="/index.html">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">pacientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Odontologos
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="/AltaOdontologo.html">Alta Odontologo</a>
+                                <a class="dropdown-item" href="/ListarOdontologos.html">Listar Odontologos</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+    </header>
+
+
+
+
+    <main>
+        <section>
+            <div class="about-us">
+                <h2>Bienvenido a OdontoMax</h2>
+                <p>
+                    Somos una clínica de odontología dedicada a ofrecer servicios dentales de alta calidad y atención
+                    personalizada
+                    a nuestros pacientes. Nuestro equipo de profesionales altamente capacitados y experimentados está
+                    comprometido
+                    con su bienestar dental y su satisfacción general.
+                    En OdontoMax, nos enfocamos en brindar una atención integral que abarca desde la prevención hasta la
+                    restauración
+                    dental. Ofrecemos una amplia gama de servicios, que incluyen limpieza dental, blanqueamiento dental,
+                    tratamientos
+                    de ortodoncia, implantes dentales, endodoncia, periodoncia y odontopediatría, entre otros.
+                </p>
+                <p>
+                    En OdontoMax, creemos en la importancia de la educación y la prevención dental. Nuestro objetivo es
+                    ayudar a
+                    nuestros pacientes a mantener una sonrisa saludable de por vida a través de prácticas de higiene
+                    dental
+                    adecuadas
+                    y visitas regulares a nuestra clínica.
+                    Además de nuestros servicios de odontología, nos enorgullece ofrecer un ambiente cómodo y acogedor
+                    en
+                    nuestra
+                    clínica. Nuestro personal amable y servicial está disponible para responder cualquier pregunta o
+                    inquietud que
+                    pueda tener.
+                    En resumen, en OdontoMax estamos comprometidos con su salud dental y su bienestar general.
+                    ¡Esperamos
+                    poder
+                    trabajar con usted para lograr una sonrisa hermosa y saludable!
+                </p>
+            </div>
+            <div class="buttons-container">
+            <button class="patient-btn">Soy paciente</button>
+            <button class="dentist-btn">Soy odontólogo</button>
+        </div>
+        </section>
+    </main>
+
+
+
+
+
+    <footer>
+        <div class="bg-dark text-secondary px-4 py-5 text-center">
+            <div class="py-5">
+                <h1 class="display-5 fw-bold text-white">OdontoMax</h1>
+                <div class="col-lg-6 mx-auto">
+                    <p class="fs-5 mb-4">Trabajo integrador para Backend</p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                        <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold"><a
+                                href="https://www.linkedin.com/in/mcvetic/" target="_blank" class="btn-link">Dont click
+                                me!</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
+

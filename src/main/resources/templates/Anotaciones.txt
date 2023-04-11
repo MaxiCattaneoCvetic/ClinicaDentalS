@@ -1,0 +1,12 @@
+Para modificar un turno, pasar po json
+        {
+            "id": 1,
+                "paciente": {
+            "id": 1
+        },
+            "odontologo": {
+            "id": 1
+        },
+            "fechaTurno": "2023-10-05",
+                "horaTurno": "10:20:00"
+        }

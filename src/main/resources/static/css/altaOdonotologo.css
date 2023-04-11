@@ -1,0 +1,52 @@
+@import url(/css/styles.css);
+body{
+        --bs-bg-opacity: 1;
+        background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+
+}
+
+.info_odonto_registrar{
+    margin-left: 3rem !important;
+    margin-top: 5rem !important;
+
+}
+.info_odonto_registrar p {
+    font-weight: bolder !important;
+
+}
+
+.formulario_alta{
+    display: flex !important;
+    justify-content: center !important;
+    gap: 2rem !important;
+    margin: 2rem 0rem 2rem 2rem !important;
+    margin-top: 5rem !important;
+}
+
+.form-whd{
+    width: 40%;
+}
+
+.formulario_alta img{
+    width: 31%;
+    border-radius: 8rem !important;
+}
+
+.form-group input{
+    border-radius: 1rem !important;
+}
+
+.about-us{
+    text-emphasis: none;
+    width: 70%;
+    margin-left: 8rem;
+
+}
+
+.btn-link{
+    text-decoration: none !important;
+}
+
+.control-label{
+    font-weight: bold;
+}

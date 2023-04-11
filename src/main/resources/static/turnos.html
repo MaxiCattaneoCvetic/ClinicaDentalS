@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://kit.fontawesome.com/52fcd56210.js" crossorigin="anonymous"></script>
+
+        
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+
+    <!-- alerts -->
+        <script src="sweetalert2.min.js"></script>
+        <link rel="stylesheet" href="sweetalert2.min.css">
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/ListarOdontologos.css">
+    <script type="text/javascript" src="/js/POST/post_turnos.js"></script>
+    <script type="text/javascript" src="/js/GET/get_turnos.js"></script>
+    <script type="text/javascript" src="/js/DELETE/delete_turno.js"></script>
+    <script type="text/javascript" src="/js/UPDATE/update_turno.js"></script>
+    <title>Carta de Odontologos</title>   
+</head>
+
+<body>
+    <header>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fa-solid fa-tooth fa-bounce"></i>Odonto Max</a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="/AltaOdontologo.html">Alta de Odontologos</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="/AltaPaciente.html">Alta
+                            Pacientes</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="/ListarOdontologos.html">Carta de Odontologos</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="/listarPacientes.html">Pacientes Registrados</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="/turnos.html">Turnos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <section id="log_out">
+                <button type="button" onclick="location.replace('/logout')"class="btn btn-secondary">Salir de la cuenta</button>
+            </section>
+        </div>
+    </nav>
+
+    </header>
+
+
+
+    <main>
+        <button type="button" data-bs-toggle="modal" data-bs-target="#turno_modal" class="btn btn-success">Registrar
+            turno</button>
+
+
+            <div id="box-turnos"></div>
+
+
+
+
+        <section>
+            <!-- Modal -->
+            <div class="modal fade" id="turno_modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Seleccione un turno</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="sacar_turno" class="form-whd">
+                                <div class="form-group">
+                                    <label class="control-label" for="fechaTurno">Seleccione una fecha</label>
+                                    <input type="date" class="form-control" id="fechaTurno" name="fechaTurno" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" for="horaTurno">Seleccione un horario</label>
+                                    <input type="time" class="form-control" id="horaTurno" name="horaTurno" required>
+                                </div>
+                                <div>
+                                    <label class="control-label" for="pacientes">Seleccione un paciente</label>
+                                    <select class="form-control" id="pacientes" name="paciente" required>
+                                        <option value="" disabled selected>Seleccione un paciente</option>
+                                    </select>
+                                </div>
+                                    <div>
+                                        <label class="control-label" for="odontologo">Seleccione un odontologo</label>
+                                        <select class="form-control" id="odontologo" name="odontologo" required>
+                                            <option value="" disabled selected>Seleccione un odontologo</option>
+                                        </select>
+                                    </div>
+                                    <!-- </div>
+                                    <label class="control-label" for="odontologo">ingrese ID Odontologo</label>
+                                    <input type="text" class="form-control" id="odontologo" name="odontologo" required>
+                                </div> -->
+                                    <!-- <label class="control-label" for="odontologo">ingrese ID Odontologo</label>
+                                    <input type="text" class="form-control" id="odontologo" name="odontologo" required> -->
+                                <!-- botones del modal -->
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Sacar turno</button>
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <!-- Modal update  -->
+            <div class="modal fade" id="turno_modal_update" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Seleccione los datos que desea modificar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="update_turno" class="form-whd">
+                                <div class="form-group">
+                                    <label class="control-label" for="fechaTurno_update">Seleccione una fecha</label>
+                                    <input type="date" class="form-control" id="fechaTurno_update"
+                                        name="fechaTurno_update" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" for="horaTurno_update">Seleccione un horario</label>
+                                    <input type="time" class="form-control" id="horaTurno_update"
+                                        name="horaTurno_update" required>
+                                </div>
+                                <div>
+                                    <label class="control-label" for="paciente_update">Seleccione un paciente</label>
+                                    <select class="form-control" id="paciente_update" name="paciente_update" required>
+                                        <option value="" disabled selected>Seleccione un paciente</option>
+                                    </select>
+                                </div>
+                                    <div>
+                                        <label class="control-label" for="odontologo_update">Seleccione un odontologo</label>
+                                        <select class="form-control" id="odontologo_update" name="odontologo_update" required>
+                                            <option value="" disabled selected>Seleccione un odontologo</option>
+                                        </select>
+                                    </div>
+
+                                <!-- <div>
+                                    <label class="control-label" for="paciente_update">Ingrese ID Paciente</label>
+                                    <input type="text" class="form-control" id="paciente_update" name="paciente_update"
+                                        required>
+                                </div>
+                                <div>
+                                    <label class="control-label" for="odontologo_update">ingrese ID Odontologo</label>
+                                    <input type="text" class="form-control" id="odontologo_update"
+                                        name="odontologo_update" required>
+                                </div> -->
+
+                                <!-- botones del modal -->
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Modificar turno</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar
+                                        modificacion</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="sweetalert2.all.min.js"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

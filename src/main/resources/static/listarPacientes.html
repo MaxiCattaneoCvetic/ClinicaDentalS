@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/ListarOdontologos.css">
+    <script type="text/javascript" src="/js/GET/get_pacientes.js"></script>
+    <script type="text/javascript" src="/js/DELETE/delete_paciente.js"></script>
+    <script type="text/javascript" src="/js/UPDATE/update_paciente.js"></script>
+    <title>Registro de pacientes</title>
+</head>
+
+<body>
+    <header>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fa-solid fa-tooth fa-bounce"></i>Odonto Max</a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="/AltaOdontologo.html">Alta de Odontologos</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="/AltaPaciente.html">Alta
+                            Pacientes</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="/ListarOdontologos.html">Carta de Odontologos</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="/listarPacientes.html">Pacientes Registrados</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="/turnos.html">Turnos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <section id="log_out">
+                <button type="button" onclick="location.replace('/logout')"class="btn btn-secondary">Salir de la cuenta</button>
+            </section>
+        </div>
+    </nav>
+
+
+    </header>
+
+
+    <main>
+        <div class="container-odonto">
+            <div class="container-card">
+                <div id="containerMM" class="d-flex text-center "> </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="pacienteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">¿Que datos desea modificar?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="update_paciente" class="form-whd">
+                            <h3>Registrar Paciente</h3>
+                            <div class="form-group">
+                                <label class="control-label" for="numero_matricula">Nombre</label>
+                                <input type="text" class="form-control" id="nombre"
+                                    placeholder="Ingrese el nombre del paciente" name="nombre">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="nombre">Apellido:</label>
+                                <input type="text" class="form-control" id="apellido"
+                                    placeholder="Ingrese el Apellido del Paciente" name="apellido">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="fechaIngreso">FechaIngreso del paciente</label>
+                                <input type="date" class="form-control" id="fechaIngreso"
+                                    placeholder="Ingrese la fechaIngreso del paciente" name="fechaIngreso">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="dni">Dni del paciente</label>
+                                <input type="number" class="form-control" id="dni"
+                                    placeholder="Ingrese el dni del paciente" name="dni">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="calle">Calle</label>
+                                <input type="text" class="form-control" id="calle" placeholder="Calle" name="calle">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="calle">Altura</label>
+                                <input type="number" class="form-control" id="numero" placeholder="Altura"
+                                    name="numero">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="calle">Localidad</label>
+                                <input type="text" class="form-control" id="localidad" placeholder="Localidad"
+                                    name="localidad">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="calle">Provincia</label>
+                                <input type="text" class="form-control" id="privincia" placeholder="Provincia"
+                                    name="privincia">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="email">Email del paciente</label>
+                                <input type="email" class="form-control" id="email"
+                                    placeholder="Ingrese el email del paciente" name="email">
+                            </div>
+
+                            <!-- botones del modal -->
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Modificar Paciente</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </main>
+
+<div class="space">
+
+</div>
+
+    <!-- Footer-->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Location-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Location</h4>
+                    <p class="lead mb-0">
+                        Digital House
+                        <br />
+                        Buenos Aires - Capital
+                    </p>
+                </div>
+                <!-- Footer Social Icons-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Around the Web</h4>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/mcvetic/"
+                        target="_blank"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                </div>
+                <!-- Footer About Text-->
+                <div class="col-lg-4">
+                    <h4 class="text-uppercase mb-4">About Me</h4>
+                    <p class="lead mb-0">
+                        Te invito a ver mi porfolio
+                        <a href="https://maxicattaneocvetic.github.io/porfolio/" target="_blank"><br>Click Here</a>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Copyright Section-->
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Proyecto Integrador Backend &copy; Maximiliano Cattaneo Cvetic</small></div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
